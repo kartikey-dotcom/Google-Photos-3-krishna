@@ -334,19 +334,19 @@ st.markdown(MATERIAL_CSS, unsafe_allow_html=True)
 # Authentic Google Photos 4-Color Pinwheel SVG
 PINWHEEL_SVG_32 = """
 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 4C11.5817 4 8 7.58172 8 12C8 16.4183 11.5817 16 16 16V4Z" fill="#EA4335"/>
-  <path d="M28 16C28 11.5817 24.4183 8 20 8C15.5817 8 16 11.5817 16 16H28Z" fill="#FBBC04"/>
-  <path d="M16 28C20.4183 28 24 24.4183 24 20C24 15.5817 20.4183 16 16 16V28Z" fill="#34A853"/>
-  <path d="M4 16C4 20.4183 7.58172 24 12 24C16.4183 24 16 20.4183 16 16H4Z" fill="#1A73E8"/>
+<path d="M16 4C11.5817 4 8 7.58172 8 12C8 16.4183 11.5817 16 16 16V4Z" fill="#EA4335"/>
+<path d="M28 16C28 11.5817 24.4183 8 20 8C15.5817 8 16 11.5817 16 16H28Z" fill="#FBBC04"/>
+<path d="M16 28C20.4183 28 24 24.4183 24 20C24 15.5817 20.4183 16 16 16V28Z" fill="#34A853"/>
+<path d="M4 16C4 20.4183 7.58172 24 12 24C16.4183 24 16 20.4183 16 16H4Z" fill="#1A73E8"/>
 </svg>
 """
 
 PINWHEEL_SVG_48 = """
 <svg width="44" height="44" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="M16 4C11.5817 4 8 7.58172 8 12C8 16.4183 11.5817 16 16 16V4Z" fill="#EA4335"/>
-  <path d="M28 16C28 11.5817 24.4183 8 20 8C15.5817 8 16 11.5817 16 16H28Z" fill="#FBBC04"/>
-  <path d="M16 28C20.4183 28 24 24.4183 24 20C24 15.5817 20.4183 16 16 16V28Z" fill="#34A853"/>
-  <path d="M4 16C4 20.4183 7.58172 24 12 24C16.4183 24 16 20.4183 16 16H4Z" fill="#1A73E8"/>
+<path d="M16 4C11.5817 4 8 7.58172 8 12C8 16.4183 11.5817 16 16 16V4Z" fill="#EA4335"/>
+<path d="M28 16C28 11.5817 24.4183 8 20 8C15.5817 8 16 11.5817 16 16H28Z" fill="#FBBC04"/>
+<path d="M16 28C20.4183 28 24 24.4183 24 20C24 15.5817 20.4183 16 16 16V28Z" fill="#34A853"/>
+<path d="M4 16C4 20.4183 7.58172 24 12 24C16.4183 24 16 20.4183 16 16H4Z" fill="#1A73E8"/>
 </svg>
 """
 
@@ -355,25 +355,25 @@ PINWHEEL_SVG_48 = """
 # ==============================================================================
 st.markdown(
     f"""
-    <div class="gp-navbar">
-        <div class="gp-brand">
-            <div style="display: flex; align-items: center;">
+<div class="gp-navbar">
+<div class="gp-brand">
+<div style="display: flex; align-items: center;">
                 {PINWHEEL_SVG_32}
-            </div>
-            <div class="gp-titles">
-                <div class="gp-title">Google Photos Memory Retrieval Intelligence Engine</div>
-                <div class="gp-subtitle">Personal Search & Semantic Discovery • Core PM Intelligence Tool</div>
-            </div>
-        </div>
-        <div class="gp-badges">
-            <span class="gp-chip gp-chip-slate">Core PM Tool v1.0</span>
-            <span class="gp-chip gp-chip-blue">Gemini 1.5 Flash (Temp: 0.2)</span>
-            <span class="gp-chip gp-chip-green">
-                <span class="status-dot dot-green"></span>
+</div>
+<div class="gp-titles">
+<div class="gp-title">Google Photos Memory Retrieval Intelligence Engine</div>
+<div class="gp-subtitle">Personal Search & Semantic Discovery • Core PM Intelligence Tool</div>
+</div>
+</div>
+<div class="gp-badges">
+<span class="gp-chip gp-chip-slate">Core PM Tool v1.0</span>
+<span class="gp-chip gp-chip-blue">Gemini 1.5 Flash (Temp: 0.2)</span>
+<span class="gp-chip gp-chip-green">
+<span class="status-dot dot-green"></span>
                 Ready (Streamlit Native)
-            </span>
-        </div>
-    </div>
+</span>
+</div>
+</div>
     """,
     unsafe_allow_html=True,
 )
@@ -404,12 +404,12 @@ with st.sidebar:
     # Card 1: API Key Configuration Panel
     st.markdown(
         """
-        <div class="sidebar-panel">
-            <div class="sidebar-panel-header">
-                <span class="sidebar-panel-title">🔑 API Key Configuration</span>
-            </div>
-            <div class="sidebar-panel-subtitle">Zero-trust runtime memory lifecycle (never persisted to disk)</div>
-        </div>
+<div class="sidebar-panel">
+<div class="sidebar-panel-header">
+<span class="sidebar-panel-title">🔑 API Key Configuration</span>
+</div>
+<div class="sidebar-panel-subtitle">Zero-trust runtime memory lifecycle (never persisted to disk)</div>
+</div>
         """,
         unsafe_allow_html=True,
     )
@@ -445,12 +445,12 @@ with st.sidebar:
     # Card 2: Corpus Source Filter Panel
     st.markdown(
         """
-        <div class="sidebar-panel">
-            <div class="sidebar-panel-header">
-                <span class="sidebar-panel-title">📊 Corpus Source Filter</span>
-            </div>
-            <div class="sidebar-panel-subtitle">Active multi-channel customer conversations</div>
-        </div>
+<div class="sidebar-panel">
+<div class="sidebar-panel-header">
+<span class="sidebar-panel-title">📊 Corpus Source Filter</span>
+</div>
+<div class="sidebar-panel-subtitle">Active multi-channel customer conversations</div>
+</div>
         """,
         unsafe_allow_html=True,
     )
@@ -506,12 +506,12 @@ with st.sidebar:
     # Card 3: Standardized Analytical Workflows
     st.markdown(
         """
-        <div class="sidebar-panel">
-            <div class="sidebar-panel-header">
-                <span class="sidebar-panel-title">⚡ Analytical Workflows</span>
-            </div>
-            <div class="sidebar-panel-subtitle">Deterministic prompts • Beyond review summarization</div>
-        </div>
+<div class="sidebar-panel">
+<div class="sidebar-panel-header">
+<span class="sidebar-panel-title">⚡ Analytical Workflows</span>
+</div>
+<div class="sidebar-panel-subtitle">Deterministic prompts • Beyond review summarization</div>
+</div>
         """,
         unsafe_allow_html=True,
     )
@@ -562,17 +562,17 @@ workflow_title = active_wf["title"] if active_wf else "Awaiting Workflow Selecti
 # Canvas Header Bar
 st.markdown(
     f"""
-    <div class="canvas-header-bar">
-        <div class="canvas-header-left">
-            <span class="workflow-badge-tag">{badge_tag}</span>
-            <span class="canvas-header-title">{workflow_title}</span>
-        </div>
-        <div>
-            <span style="font-size: 12px; color: #5f6368;">
+<div class="canvas-header-bar">
+<div class="canvas-header-left">
+<span class="workflow-badge-tag">{badge_tag}</span>
+<span class="canvas-header-title">{workflow_title}</span>
+</div>
+<div>
+<span style="font-size: 12px; color: #5f6368;">
                 {active_records_count} Records Active • Gemini 1.5 Flash
-            </span>
-        </div>
-    </div>
+</span>
+</div>
+</div>
     """,
     unsafe_allow_html=True,
 )
@@ -582,19 +582,19 @@ if active_wf is None:
     # IDLE State Presentation
     st.markdown(
         f"""
-        <div class="idle-box">
-            <div class="idle-pinwheel-hero">
+<div class="idle-box">
+<div class="idle-pinwheel-hero">
                 {PINWHEEL_SVG_48}
-            </div>
-            <div class="idle-heading">Google Photos Memory Retrieval Intelligence Engine</div>
-            <div class="idle-subtext">
+</div>
+<div class="idle-heading">Google Photos Memory Retrieval Intelligence Engine</div>
+<div class="idle-subtext">
                 Deconstruct human memory retrieval failures & bridge the <strong>Semantic-Episodic Gap</strong> using empirical Voice-of-Customer feedback and conversations at scale.
-            </div>
-            <div class="idle-callout">
+</div>
+<div class="idle-callout">
                 💡 <strong>Deterministic RAG Pipeline — Not a Chatbot:</strong>
                 Select one of the 4 standardized analytical workflows in the left sidebar to execute structured, low-temperature prompt directives against real user data.
-            </div>
-        </div>
+</div>
+</div>
         """,
         unsafe_allow_html=True,
     )
@@ -604,24 +604,24 @@ if active_wf is None:
     with col_w1:
         st.markdown(
             """
-            <div class="workflow-card-mini">
-                <div class="workflow-card-mini-title">🏷️ 01. Taxonomy of "Lost" Photos</div>
-                <div class="workflow-card-mini-desc">
+<div class="workflow-card-mini">
+<div class="workflow-card-mini-title">🏷️ 01. Taxonomy of "Lost" Photos</div>
+<div class="workflow-card-mini-desc">
                     Isolates search failure edge-cases (incidental screenshots, situational vibes, relative-temporal queries) with direct verbatim user citations.
-                </div>
-            </div>
+</div>
+</div>
             """,
             unsafe_allow_html=True,
         )
         st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
         st.markdown(
             """
-            <div class="workflow-card-mini">
-                <div class="workflow-card-mini-title">⚙️ 03. Behavioral Workarounds</div>
-                <div class="workflow-card-mini-desc">
+<div class="workflow-card-mini">
+<div class="workflow-card-mini-title">⚙️ 03. Behavioral Workarounds</div>
+<div class="workflow-card-mini-desc">
                     Catalogs brute-force compensatory patterns (Person Pivot, External App Audit, Chronological Scrubbing) with explicit friction scores.
-                </div>
-            </div>
+</div>
+</div>
             """,
             unsafe_allow_html=True,
         )
@@ -629,24 +629,24 @@ if active_wf is None:
     with col_w2:
         st.markdown(
             """
-            <div class="workflow-card-mini">
-                <div class="workflow-card-mini-title">📊 02. Cognitive Gap Matrix</div>
-                <div class="workflow-card-mini-desc">
+<div class="workflow-card-mini">
+<div class="workflow-card-mini-title">📊 02. Cognitive Gap Matrix</div>
+<div class="workflow-card-mini-desc">
                     Generates a structured 3-column T-Chart comparing retained human episodic anchors against rigid system metadata demands.
-                </div>
-            </div>
+</div>
+</div>
             """,
             unsafe_allow_html=True,
         )
         st.markdown("<div style='height: 12px;'></div>", unsafe_allow_html=True)
         st.markdown(
             """
-            <div class="workflow-card-mini">
-                <div class="workflow-card-mini-title">🚀 04. Product Opportunity Synthesis</div>
-                <div class="workflow-card-mini-desc">
+<div class="workflow-card-mini">
+<div class="workflow-card-mini-title">🚀 04. Product Opportunity Synthesis</div>
+<div class="workflow-card-mini-desc">
                     Synthesizes 2 high-impact POAs with testable hypotheses, concluded by a side-by-side Comparison & Trade-off Matrix.
-                </div>
-            </div>
+</div>
+</div>
             """,
             unsafe_allow_html=True,
         )
@@ -751,14 +751,14 @@ with st.expander(f"📁 Ingested VoC Ground Truth Corpus ({active_records_count}
 # ==============================================================================
 st.markdown(
     """
-    <div class="gp-footer">
-        <div>
-            <strong>Grounding Corpus:</strong> 7 Ingested Multi-Channel Records (Reddit, Play Store, App Store, Google Support)
-        </div>
-        <div>
-            <strong>Engine:</strong> Gemini 1.5 Flash (Temp: 0.2, Top_P: 0.8) • <strong>Security:</strong> Ephemeral Memory Lifecycle
-        </div>
-    </div>
+<div class="gp-footer">
+<div>
+<strong>Grounding Corpus:</strong> 7 Ingested Multi-Channel Records (Reddit, Play Store, App Store, Google Support)
+</div>
+<div>
+<strong>Engine:</strong> Gemini 1.5 Flash (Temp: 0.2, Top_P: 0.8) • <strong>Security:</strong> Ephemeral Memory Lifecycle
+</div>
+</div>
     """,
     unsafe_allow_html=True,
 )
