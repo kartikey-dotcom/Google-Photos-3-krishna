@@ -97,7 +97,7 @@ INPUT VOICE-OF-CUSTOMER (VoC) FEEDBACK DATASET:
 Strictly adhere to the output contract and ground all findings in the provided dataset. Begin your analysis now:"""
 
 
-def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemini-1.5-flash-latest") -> Dict[str, Any]:
+def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemini-1.5-flash") -> Dict[str, Any]:
     """
     Direct HTTPS REST client for Google AI Studio Generative Language API
     bound strictly to Temperature 0.2 and Top_P 0.8.
@@ -106,7 +106,14 @@ def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemin
     if not clean_key:
         return {
             "success": False,
-            "error": "API Key Required: Please enter your Google Gemini API key in the configuration card on the left sidebar before triggering this analytical workflow.",
+            "error": "API Key Required: Please add your GEMINI_API_KEY to the Streamlit Cloud secrets.",
+            "status": 401,
+        }
+
+    if not clean_key.startswith("AIza"):
+        return {
+            "success": False,
+            "error": f"Invalid API Key Format: Google AI Studio API keys always begin with 'AIza'. You provided a key starting with '{clean_key[:4]}...'. Please generate a valid key at https://aistudio.google.com/app/apikey and update your Streamlit Secrets.",
             "status": 401,
         }
 
