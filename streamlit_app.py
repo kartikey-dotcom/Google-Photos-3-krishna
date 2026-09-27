@@ -27,7 +27,7 @@ MATERIAL_CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 /* Reset and Global Typography */
-html, body, [class*="css"], [class*="st-"] {
+html, body {
     font-family: 'Roboto', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: #202124;
 }

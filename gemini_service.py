@@ -97,7 +97,7 @@ INPUT VOICE-OF-CUSTOMER (VoC) FEEDBACK DATASET:
 Strictly adhere to the output contract and ground all findings in the provided dataset. Begin your analysis now:"""
 
 
-def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemini-1.5-flash") -> Dict[str, Any]:
+def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemini-1.5-flash-latest") -> Dict[str, Any]:
     """
     Direct HTTPS REST client for Google AI Studio Generative Language API
     bound strictly to Temperature 0.2 and Top_P 0.8.
@@ -133,7 +133,7 @@ def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemin
         )
 
         if response.status_code != 200:
-            return map_http_error(response.status_code)
+            return map_http_error(response.status_code, endpoint)
 
         data = response.json()
         candidates = data.get("candidates", [])
@@ -178,12 +178,14 @@ def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemin
         }
 
 
-def map_http_error(status: int) -> Dict[str, Any]:
+def map_http_error(status: int, endpoint: str = "") -> Dict[str, Any]:
     """Maps HTTP status codes to executive diagnostic banners."""
     if status == 400:
         msg = "Invalid Request (400): Invalid request payload or parameter format sent to Google AI Studio."
     elif status in (401, 403):
         msg = "Authentication Failed (401/403): Your Gemini API key is invalid or unauthorized. Please verify your Google AI Studio credentials in the sidebar."
+    elif status == 404:
+        msg = f"Model Not Found (404): The requested Gemini model was not found for this API key. ({endpoint})"
     elif status == 429:
         msg = "Rate Limit Exceeded (429): Google AI Studio quota exceeded. Please wait 30 seconds before triggering another analytical workflow."
     elif status in (500, 503):
