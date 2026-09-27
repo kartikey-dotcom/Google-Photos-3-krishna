@@ -1,0 +1,98 @@
+Project: AI-Powered Discovery Engine for Google Photos (Internal PM Tool)
+
+Target User: Google Photos Core Experience Product Managers
+Strategic Goal: Ingest, process, and synthesize unstructured public feedback (Reddit, App Store, Support Forums) to extract behavioral heuristics regarding memory retrieval failures, moving beyond basic sentiment analysis.
+
+1. System Architecture & Tech Stack Guidelines
+
+To build this, the system must act as a structured RAG (Retrieval-Augmented Generation) pipeline, not a standard chatbot.
+
+LLM Backend: Google Gemini 1.5 Pro or Flash (configured via API).
+
+LLM Parameters: Temperature: 0.2 (Strict, analytical, non-creative), Top_P: 0.8.
+
+Data Ingestion: The engine will use a pre-loaded, simulated dataset of unstructured text representing real user complaints. (See Section 2 for Data Schema).
+
+Frontend Framework: React or similar modern framework with Tailwind CSS for high-fidelity, internal-Google-tool styling.
+
+2. The Data Schema (Simulated Ingestion)
+
+Antigravity must build the app to pull from a simulated backend dataset. The data should be structured as an array of JSON objects to simulate real API scraping:
+
+[
+  {
+    "source": "r/GooglePhotos",
+    "type": "Reddit Post",
+    "content": "I'm trying to find a photo of a specific pasta dish from my Rome trip. Searching 'pasta' gives me screenshots of recipes. I can't remember the exact date, I just know it was raining and I was wearing a red jacket. I gave up after scrolling for 10 minutes.",
+    "metadata": {"upvotes": 45, "date": "2023-11-04"}
+  },
+  {
+    "source": "Play Store",
+    "type": "1-Star Review",
+    "content": "Search is useless now. If I don't know the exact date, I can't find anything. I try searching for my dog, but it shows every dog photo instead of the specific one where he's sleeping on my messy desk.",
+    "metadata": {"rating": 1, "device": "Pixel 7"}
+  }
+]
+
+
+3. The 4 Analytical Workflows (LLM Directives)
+
+The UI must have 4 distinct triggers (buttons) that execute the following specific multi-shot prompts against the dataset.
+
+Workflow 1: Taxonomy of "Lost" Photos
+
+Goal: Categorize what types of photos users cannot find using keywords.
+
+System Prompt: "Act as a Principal PM. Analyze the dataset. Identify 3 distinct categories of photos users struggle to retrieve. Exclude generic categories (e.g., 'vacation'). Focus on edge-cases like 'Incidental Screenshots' or 'Vibe/Aesthetic Photos'. For each category, provide a definition and a direct quote from the data as evidence."
+
+Output Format: Strict Markdown formatting. Use H3 (###) for category names, bullet points for definitions, and Blockquotes (>) for user evidence.
+
+Workflow 2: Cognitive Gap Matrix (Remembered vs. Forgotten)
+
+Goal: Deconstruct the user's mental model and memory state.
+
+System Prompt: "Analyze the dataset to map the cognitive gap during a failed search. What sensory, relational, or episodic information do users consistently retain (e.g., weather, people)? What absolute metadata do they consistently forget (e.g., dates, locations)? Generate a comparative analysis."
+
+Output Format: A Markdown Table (T-Chart) comparing "Retained Episodic Anchors" vs. "Forgotten System Demands."
+
+Workflow 3: Behavioral Workaround Mapping
+
+Goal: Document the manual friction users endure when search fails.
+
+System Prompt: "Identify the specific manual actions users take to brute-force the UI when their search fails. Name each behavior (e.g., 'The Person Pivot', 'Chronological Scrubbing'). Assign a 'Friction Score' (High/Medium/Low) to each based on user frustration."
+
+Output Format: A numbered list with bolded workaround names, followed by the friction score and the definition.
+
+Workflow 4: Product Opportunity Synthesis (The PM Deliverable)
+
+Goal: Translate user pain into strategic product action.
+
+System Prompt: "Based on the identified gaps and workarounds, generate 2 distinct Product Opportunity Areas (POAs). For each POA, define the 'Problem Space', the 'Proposed AI Solution', and a 'Hypothesis to Test'."
+
+Output Format: Structured Markdown sections with clear sub-headers for Problem, Solution, and Hypothesis.
+
+4. UI/UX Design & State Management Specifications
+
+Antigravity must render a highly polished, desktop-first dashboard.
+
+Layout:
+
+Left Sidebar (30% width): Contains the "API Key Configuration" input (masked), checkboxes to toggle Data Sources (Reddit, App Store - can be visually static for the MVP), and 4 primary action buttons for the workflows.
+
+Main Canvas (70% width): A clean, white reading pane for the generated reports.
+
+State Management (CRITICAL):
+
+Idle State: Show a placeholder graphic or text explaining the engine's purpose.
+
+Loading State: When a workflow is triggered, the canvas MUST show a professional loading skeleton or spinner with dynamic text (e.g., "Synthesizing unstructured user data...").
+
+Error State: If the API fails or the key is missing, render a red toast notification or inline error message specifically telling the user to check their API configuration.
+
+Success State: Render the LLM's Markdown output cleanly with proper typography (Inter or Roboto fonts), adequate line spacing (leading), and distinct styling for blockquotes and tables.
+
+Export Functionality (Bonus/Optional): Include a simple "Copy to Clipboard" button at the bottom of the generated report so the PM can easily paste it into a slide deck.
+
+5. Success Criteria for the Builder
+
+The final application must not resemble a conversational chatbot. It must feel like a deterministic data processing pipeline where clicking a specific analytical button yields a highly structured, predictable, and consultant-grade strategic report based strictly on the provided data.

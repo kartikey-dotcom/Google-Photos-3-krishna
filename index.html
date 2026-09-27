@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEMORIA // Retrieval Engine</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="brand-title">MEMORIA // Retrieval Engine</div>
+      <div class="brand-subtitle">Google Photos Core XP</div>
+      <div class="header-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" placeholder="Ask corpus...">
+        <span class="shortcut">⌘K</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        18,324 Confirmed Records | Audit Status: 94.2% Health
+      </div>
+      <button class="filter-dropdown">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        Last 3 Years
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="profile-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+      </div>
+    </div>
+  </header>
+
+  <div class="app-body">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">Corpus Telemetry</div>
+      <ul class="sidebar-nav">
+        <li class="active"><span class="nav-num">01</span> Overview Intelligence</li>
+        <li><span class="nav-num">02</span> Vector Clusters</li>
+        <li><span class="nav-num">03</span> Semantic Temporal Graph</li>
+        <li><span class="nav-num">04</span> Retrieval Benchmark & Audit</li>
+        <li><span class="nav-num">05</span> Pipeline & Re-Index</li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div>
+          <div class="breadcrumb">
+            TELEMETRY PIPELINE / <span class="highlight">Stage 3 Inversion Synthesis</span>
+          </div>
+          <div class="page-title">Episodic Memory Retrieval Audit & Opportunity Allocation</div>
+        </div>
+        <div class="sync-status">
+          <span>Cluster Hash: 0x7F92_ELI</span>
+          <span>Synced 12s ago</span>
+        </div>
+      </div>
+
+      <div class="dashboard-grid">
+        
+        <!-- Left Column -->
+        <div class="left-col">
+          
+          <!-- Metrics Row -->
+          <div class="metrics-row">
+            <div class="metric-card">
+              <div class="metric-title">Total Retained Corpus <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg></div>
+              <div class="metric-value">18,324 <span class="metric-sub positive">+3.8% MoM</span></div>
+              <div class="metric-footer">Filtered from 48,120 raw posts via...</div>
+            </div>
+            
+            <div class="metric-card">
+              <div class="metric-title">Primary Metric Drop-Off <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></div>
+              <div class="metric-value">ARR<br>(54.2%)</div>
+              <div class="metric-footer">Anchor Resolution Failure (LLM vs...</div>
+            </div>
+
+            <div class="metric-card alert">
+              <div class="metric-title">Global Abandonment Rate <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg></div>
+              <div class="metric-value">41.6% <span class="metric-sub negative">Critical</span></div>
+              <div class="metric-footer">Users who rage-quit to timeline sc...</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-title">Top Ranked Opportunity <span style="background:var(--bg-surface);padding:2px 4px;border-radius:2px;">Google PD</span></div>
+              <div class="metric-value" style="font-size:18px;margin-top:10px;">Episodic Inversion (ELI)</div>
+              <div class="metric-footer" style="margin-top:16px;">
+                <span style="color:var(--accent-cyan)">NOI: 0.1914</span> | Solvability: 4.2/5
+              </div>
+            </div>
+          </div>
+
+          <!-- Opportunity Matrix Panel -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">Opportunity Prioritization Matrix <span class="panel-title-tag">NOI Ranked</span></div>
+              <div class="panel-actions">
+                <button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg> Filter View</button>
+                <button class="btn-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Export CSV</button>
+              </div>
+            </div>
+            <div style="padding: 12px 16px; border-bottom: 1px solid var(--border-subtle); display: flex; gap: 8px; font-family: var(--font-mono); font-size: 10px; color: var(--text-tertiary);">
+              TRIAGE AXIS: 
+              <span style="color:var(--accent-blue); background:var(--accent-blue-subtle); padding:2px 6px; border-radius:2px;">All Archetypes (5)</span>
+              <span>ARR Stage (2)</span>
+              <span>OER Stage (1)</span>
+              <span>ELI Stage (1)</span>
+            </div>
+            
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Failure Archetype</th>
+                  <th>Asset Class</th>
+                  <th>Drop Stage</th>
+                  <th>Freq (%)</th>
+                  <th>Sev (1-5)</th>
+                  <th>Aband (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-rank"><span class="status-dot"></span> #1</td>
+                  <td>
+                    <div class="td-title">Episodic-to-Literal Inversion (ELI)</div>
+                    <div class="td-desc">Semantic polarity disconnect</div>
+                  </td>
+                  <td>Episodic/Life Event</td>
+                  <td><span class="status-tag">ARR_unresolved</span></td>
+                  <td>38.4%</td>
+                  <td>4.2</td>
+                  <td style="color:var(--accent-red)">78.0%</td>
+                </tr>
+                <tr>
+                  <td class="td-rank" style="color:var(--text-secondary)">#2</td>
+                  <td>
+                    <div class="td-title">OCR-Semantic Disconnect (OSD)</div>
+                    <div class="td-desc">Visual text vs image intent</div>
+                  </td>
+                  <td>Utilitarian/Doc</td>
+                  <td><span class="status-tag">ARR_unresolved</span></td>
+                  <td>27.2%</td>
+                  <td>3.9</td>
+                  <td style="color:var(--accent-red)">64.0%</td>
+                </tr>
+                <tr>
+                  <td class="td-rank" style="color:var(--text-secondary)">#3</td>
+                  <td>
+                    <div class="td-title">Brittle Spatio-Temporal (BSTA)</div>
+                    <div class="td-desc">Fuzzy relativity failure</div>
+                  </td>
+                  <td>Episodic/Life Event</td>
+                  <td><span class="status-tag purple">QER_unexpressed</span></td>
+                  <td>18.6%</td>
+                  <td>3.4</td>
+                  <td>52.0%</td>
+                </tr>
+                <tr>
+                  <td class="td-rank" style="color:var(--text-secondary)">#4</td>
+                  <td>
+                    <div class="td-title">Visual Overload / Flooding (VOCF)</div>
+                    <div class="td-desc">High recall zero precision</div>
+                  </td>
+                  <td>Aesthetic/Wall</td>
+                  <td><span class="status-tag purple">ELI_fatigue</span></td>
+                  <td>10.5%</td>
+                  <td>2.8</td>
+                  <td>38.0%</td>
+                </tr>
+                <tr>
+                  <td class="td-rank" style="color:var(--text-secondary)">#5</td>
+                  <td>
+                    <div class="td-title">Dead End (ZFIDE)</div>
+                    <div class="td-desc">Null search without guidance</div>
+                  </td>
+                  <td>Screenshot/Info</td>
+                  <td><span class="status-tag red">POS_abandoned</span></td>
+                  <td>5.3%</td>
+                  <td>4.6</td>
+                  <td style="color:var(--accent-red)">91.0%</td>
+                </tr>
+              </tbody>
+            </table>
+            
+            <div style="padding:8px 16px; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:10px; color:var(--text-tertiary);">
+              <div style="display:flex;align-items:center;gap:8px;"><span style="color:var(--accent-cyan)">● RAG AGENT</span> > Instruct agent (e.g., 'Pinpoint multimodal drift across Q3 2022 image embeddings')...</div>
+              <div style="color:var(--text-secondary)">SPU EMBED VRAM: <span style="color:var(--text-primary)">7.4 / 16 GB</span></div>
+            </div>
+          </div>
+
+          <!-- Gap Panel -->
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title" style="font-size:12px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cyan)" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                Retrieval Semantic Gap: Memory Encoding vs Query Formulation
+              </div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-tertiary);">N = 8,420 Analyzed Sessions</div>
+            </div>
+            <div class="gap-panel-content">
+              <div class="gap-grid">
+                <div class="gap-col">
+                  <h4>What Users <span>Mentally Encode</span></h4>
+                  
+                  <div class="bar-item">
+                    <div class="bar-label"><span>Temporal / Life Anchors</span> <span style="color:var(--accent-cyan)">72%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:72%"></div></div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label"><span>Emotional Context (e.g., 'Mom cooking')</span> <span style="color:var(--accent-cyan)">64%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:64%"></div></div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label"><span>Relational / Interpersonal</span> <span style="color:var(--accent-cyan)">58%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:58%"></div></div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label"><span>Spatial Ambient (No EXIF)</span> <span style="color:var(--accent-cyan)">46%</span></div>
+                    <div class="bar-bg"><div class="bar-fill" style="width:46%"></div></div>
+                  </div>
+                </div>
+                
+                <div class="gap-col">
+                  <h4>What Users Actually <span>Search Box Query</span></h4>
+                  
+                  <div class="bar-item">
+                    <div class="bar-label"><span>Single Literal Physical Noun</span> <span style="color:var(--accent-red)">68%</span></div>
+                    <div class="bar-bg"><div class="bar-fill purple" style="width:68%"></div></div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label"><span>Generic Broad Category ('recipe', 'food')</span> <span style="color:var(--accent-red)">22%</span></div>
+                    <div class="bar-bg"><div class="bar-fill purple" style="width:22%"></div></div>
+                  </div>
+                  <div class="bar-item">
+                    <div class="bar-label"><span>Rich Episodic Sentence / Story</span> <span style="color:var(--accent-blue)">10%</span></div>
+                    <div class="bar-bg"><div class="bar-fill blue" style="width:10%"></div></div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="inversion-box">
+                <div class="inversion-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                </div>
+                <div class="inversion-text">
+                  <h5>The Inversion Paradox</h5>
+                  <p>Users anchor episodic memories in affective cues, but formulate search queries exclusively in physical nouns. Current embeddings over-index on literal object detection (e.g., food tags) while dropping relational context.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-col">
+          
+          <div class="panel">
+            <div class="panel-header">
+              <div class="panel-title">Ground-Truth Evidence Inspector</div>
+              <div class="panel-title-tag">Target: #1 ELI</div>
+            </div>
+            
+            <div class="inspector-tabs">
+              <div class="tab active">Confirmed<br>(17,260)</div>
+              <div class="tab">Pending Review<br>(820)</div>
+              <div class="tab">Mismatch<br>(244)</div>
+            </div>
+            
+            <div class="inspector-content">
+              <div class="meta-row">
+                <span>Reddit - r/googlephotos</span>
+                <span>14 Mar 2024 <span class="meta-tag">REC-10492</span></span>
+              </div>
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--accent-cyan);display:flex;align-items:center;gap:6px;">
+                <span class="status-dot"></span> Stage 3 Sonnet Confirmed
+              </div>
+              
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-tertiary);text-transform:uppercase;">Verbatim User Friction Report</div>
+              <div class="verbatim-box">
+                "I spent 45 minutes searching for the handwritten butter chicken recipe my mom sent on WhatsApp during Diwali two years ago. Typed 'recipe', 'chicken', 'note', scrolled until my eyes hurt and gave up."
+              </div>
+              
+              <div class="image-box">
+                <img src="assets/recipe.jpg" alt="Handwritten recipe">
+                <div class="image-tag">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                  Ground Truth Target: WhatsApp_IMG_20221024_RECIPE.jpeg
+                </div>
+              </div>
+              
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-tertiary);text-transform:uppercase;">Extracted Cognitive Dimensions</div>
+              <div class="dim-tags">
+                <div class="dim-tag"><strong>Remembered:</strong> Temporal: Diwali ~2y ago</div>
+                <div class="dim-tag">Social: Mom</div>
+                <div class="dim-tag">App: WhatsApp</div>
+                <div class="dim-tag">Emotion: Nostalgic</div>
+              </div>
+              <div class="dim-tags" style="margin-top:-8px;">
+                <div class="dim-tag" style="text-decoration:line-through;opacity:0.5;">Forgotten: Exact Date</div>
+                <div class="dim-tag" style="text-decoration:line-through;opacity:0.5;">File Name</div>
+                <div class="dim-tag" style="text-decoration:line-through;opacity:0.5;">OCR Exact Heading</div>
+              </div>
+              
+              <div class="diagnostics">
+                <div class="diag-title">Execution Diagnostics</div>
+                <div class="diag-tags">
+                  <div class="diag-tag">Attempted Queries:</div>
+                  <div class="diag-tag" style="background:var(--bg-card);border-color:var(--border-subtle);">'recipe'</div>
+                  <div class="diag-tag" style="background:var(--bg-card);border-color:var(--border-subtle);">'chicken'</div>
+                  <div class="diag-tag" style="background:var(--bg-card);border-color:var(--border-subtle);">'note'</div>
+                </div>
+                
+                <div class="diag-row">
+                  <div class="diag-label">Engine Blind</div>
+                  <div class="diag-text">Engine indexed food photos; failed to connect religious holiday anchor to handwritten card.</div>
+                </div>
+                
+                <div class="diag-stats">
+                  <div class="stat-box">
+                    <span class="stat-label">Session Duration</span>
+                    <span class="stat-val" style="color:var(--accent-cyan);font-weight:600;font-size:14px;">45 Minutes</span>
+                    <span class="stat-label" style="color:var(--text-secondary);text-transform:none;">Infinite Scroll</span>
+                  </div>
+                  <div class="stat-box">
+                    <span class="stat-label">Frustration Rating</span>
+                    <span class="stat-val">5.0/5.0 !</span>
+                    <span class="stat-label" style="color:var(--text-secondary);text-transform:none;">Session Rage-Quit</span>
+                  </div>
+                </div>
+                
+                <div class="action-buttons">
+                  <button class="btn-secondary">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    Copy JSON
+                  </button>
+                  <button class="btn-secondary">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                    RAG Analysis
+                  </button>
+                  <button class="btn-secondary" style="flex:0.2;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                  </button>
+                </div>
+              </div>
+              
+              <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-tertiary);text-align:center;margin-top:8px;">
+                Context Window: <span style="color:var(--accent-cyan)">128k</span> Tokens &nbsp;&nbsp; 
+                <span style="color:var(--accent-cyan);cursor:pointer;">Execute RAG Query ▾</span>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <!-- Footer CLI -->
+      <div class="footer-cli">
+        <div class="cli-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+        </div>
+        <div class="cli-text">
+          <div class="cli-title">Corpus Exploration CLI <span style="color:var(--text-secondary);text-transform:none;">v2.4-active</span></div>
+          <div style="font-size:11px;color:var(--text-secondary);margin-bottom:6px;">Run conversational synthesis over 18,324 confirmed multimodal retrieval dropouts</div>
+          <div style="display:flex;align-items:center;">
+            <span style="color:var(--accent-cyan);font-family:var(--font-mono);font-weight:600;">> </span>
+            <input type="text" class="cli-input" value="Compare time-to-abandonment between">
+          </div>
+        </div>
+        <div class="cli-actions">
+          <span class="cli-hint">↵ Enter</span>
+          <button class="btn-eval">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Evaluate
+          </button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+</body>
+</html>

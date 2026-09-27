@@ -1,0 +1,30 @@
+:root {
+  --bg-main: #141416;
+  --bg-sidebar: #101012;
+  --bg-card: #1c1c1f;
+  --bg-card-hover: #232327;
+  --bg-surface: #27272a;
+  
+  --border-subtle: #2d2d30;
+  --border-active: #3a3a3e;
+
+  --text-primary: #e4e4e7;
+  --text-secondary: #a1a1aa;
+  --text-tertiary: #71717a;
+  
+  --accent-blue: #3b82f6;
+  --accent-blue-subtle: rgba(59, 130, 246, 0.15);
+  
+  --accent-red: #ef4444;
+  --accent-red-subtle: rgba(239, 68, 68, 0.15);
+  
+  --accent-cyan: #22d3ee;
+  
+  --accent-green: #22c55e;
+  
+  --accent-purple: #a855f7;
+  --accent-purple-subtle: rgba(168, 85, 247, 0.15);
+
+  --font-mono: 'Roboto Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
