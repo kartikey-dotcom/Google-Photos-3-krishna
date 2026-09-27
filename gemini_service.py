@@ -278,3 +278,59 @@ def optimize_for_slides(markdown: str) -> str:
         i += 1
 
     return "\n".join(output).strip()
+
+def execute_gemini_inference_stream(prompt: str, api_key: str, model_name: str = "gemini-3.8-flash"):
+    import time, json, requests
+    clean_key = (api_key or "").strip().strip("'\"")
+    if not clean_key:
+        yield "Error: Missing API Key"
+        return
+    if not prompt or not prompt.strip():
+        yield "Error: Invalid Request"
+        return
+
+    endpoint = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:streamGenerateContent?alt=sse&key={clean_key}"
+    payload = {
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": GENERATION_CONFIG,
+    }
+
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            with requests.post(
+                endpoint,
+                headers={"Content-Type": "application/json"},
+                json=payload,
+                timeout=45,
+                stream=True
+            ) as response:
+                if response.status_code in (429, 500, 503) and attempt < max_retries - 1:
+                    time.sleep(2 ** attempt)
+                    continue
+                
+                if response.status_code != 200:
+                    yield f"Error {response.status_code}: {response.text}"
+                    return
+                
+                for line in response.iter_lines():
+                    if line:
+                        decoded_line = line.decode('utf-8')
+                        if decoded_line.startswith('data: '):
+                            data_str = decoded_line[6:]
+                            try:
+                                chunk = json.loads(data_str)
+                                candidates = chunk.get("candidates", [])
+                                if candidates:
+                                    text = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+                                    if text:
+                                        yield text
+                            except Exception:
+                                pass
+                return
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+                continue
+            yield f"Error: {str(e)}"
+            return

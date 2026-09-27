@@ -9,7 +9,7 @@ import numpy as np
 import json
 import plotly.express as px
 from corpus import default_python_corpus_store
-from gemini_service import build_workflow_prompt, execute_gemini_inference, optimize_for_slides
+from gemini_service import build_workflow_prompt, execute_gemini_inference, execute_gemini_inference_stream, optimize_for_slides
 
 # ==============================================================================
 # Page Configuration
@@ -495,12 +495,11 @@ with tab5:
         elif not query:
             st.warning("⚠️ Please enter a query.")
         else:
-            with st.spinner("Generating Insights via Gemini 1.5 Flash..."):
+            with st.spinner("Generating Insights via Gemini 3.8 Flash..."):
                 prompt = f"SYSTEM: You are a PM for Google Photos. Answer the following based on VoC data: {query}\nDATA: {json.dumps(active_records)}"
-                res = execute_gemini_inference(prompt, st.session_state.api_key)
-                if res["success"]:
-                    st.success("Analysis Complete!")
-                    st.markdown("---")
-                    st.markdown(res["data"])
-                else:
-                    st.error(res["error"])
+                st.success("Analysis Complete!")
+                st.markdown("---")
+                
+                # Stream the response directly to the UI to eliminate buffering
+                stream = execute_gemini_inference_stream(prompt, st.session_state.api_key)
+                st.write_stream(stream)
