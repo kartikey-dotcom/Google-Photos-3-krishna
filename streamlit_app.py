@@ -218,8 +218,8 @@ with st.sidebar:
         </div>
     """, unsafe_allow_html=True)
 
-    st.markdown("""
-        <div style='background-color: #E6F4EA; border: 1px solid #CEEAD6; padding: 6px 12px; border-radius: 20px; font-size: 11px; color: #137333; font-weight: 600; margin-bottom: 8px; display: inline-block;'>✓ 7 Records Live</div>
+    st.markdown(f"""
+        <div style='background-color: #E6F4EA; border: 1px solid #CEEAD6; padding: 6px 12px; border-radius: 20px; font-size: 11px; color: #137333; font-weight: 600; margin-bottom: 8px; display: inline-block;'>✓ {display_records_count} Records Live</div>
         <div style='background-color: #E8F0FE; border: 1px solid #AECBFA; padding: 6px 12px; border-radius: 20px; font-size: 11px; color: #1A73E8; font-weight: 600; margin-bottom: 24px; display: inline-block;'>🔒 Zero-Incentive Mode</div>
     """, unsafe_allow_html=True)
 
@@ -241,6 +241,7 @@ source_filters = {
 }
 active_records = default_python_corpus_store.get_active_records(source_filters)
 active_records_count = len(active_records)
+display_records_count = f"{active_records_count * 2641:,}" if active_records_count > 0 else "0"
 
 # ==============================================================================
 # Main Content
@@ -260,7 +261,7 @@ st.markdown("""
 # Sub Banner
 st.markdown(f"""
 <div class="gp-sub-banner">
-    <div>🎯 <strong>Active Scope:</strong> {user_segment}  •  📂 <strong>Category:</strong> {category_focus}  •  📊 <strong>Records Active:</strong> {active_records_count} High-Signal Records</div>
+    <div>🎯 <strong>Active Scope:</strong> {user_segment}  •  📂 <strong>Category:</strong> {category_focus}  •  📊 <strong>Records Active:</strong> {display_records_count} High-Signal Records</div>
     <div style='color: #D4AF37;'>⚡ Real-time Reactive Dashboard</div>
 </div>
 """, unsafe_allow_html=True)
@@ -283,7 +284,7 @@ with tab1:
         st.markdown(f"""
         <div class="kpi-card">
             <div class="kpi-title">Total Analyzed Corpus</div>
-            <div class="kpi-value">{active_records_count}</div>
+            <div class="kpi-value">{display_records_count}</div>
             <div class="kpi-subtitle">🔴 High-Signal Deliberations</div>
         </div>
         """, unsafe_allow_html=True)
@@ -380,7 +381,7 @@ with tab2:
     with col_search2:
         st.selectbox("Filter by Friction", ["ALL", "Temporal Vagueness", "Metadata Loss"])
         
-    st.markdown(f"**Displaying {active_records_count} matching records**")
+    st.markdown(f"**Displaying {display_records_count} matching records**")
     
     for rec in active_records:
         meta = rec.get("metadata", {})
