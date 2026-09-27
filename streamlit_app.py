@@ -251,7 +251,7 @@ st.markdown("""
 <div class="gp-hero-banner">
     <div class="gp-hero-chip">GOOGLE</div>
     <div>
-        <h1 class="gp-hero-title">Memory Retrieval Intelligence Engine</h1>
+        <div class="gp-hero-title">Memory Retrieval Intelligence Engine</div>
         <div class="gp-hero-subtitle">Diagnosing & Solving Photo Retrieval Stagnation via Semantic & Temporal Nudges</div>
     </div>
 </div>
