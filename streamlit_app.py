@@ -218,11 +218,6 @@ with st.sidebar:
         </div>
     """, unsafe_allow_html=True)
 
-    st.markdown(f"""
-        <div style='background-color: #E6F4EA; border: 1px solid #CEEAD6; padding: 6px 12px; border-radius: 20px; font-size: 11px; color: #137333; font-weight: 600; margin-bottom: 8px; display: inline-block;'>✓ {display_records_count} Records Live</div>
-        <div style='background-color: #E8F0FE; border: 1px solid #AECBFA; padding: 6px 12px; border-radius: 20px; font-size: 11px; color: #1A73E8; font-weight: 600; margin-bottom: 24px; display: inline-block;'>🔒 Zero-Incentive Mode</div>
-    """, unsafe_allow_html=True)
-
     st.markdown("##### 🎯 Global Context Filters")
     user_segment = st.selectbox("User Segment", ["All User Segments", "Power Users", "Casual Explorers"])
     category_focus = st.selectbox("Category Focus", ["All Categories (Semantic & Time)", "People & Pets", "Locations"])
@@ -233,15 +228,21 @@ with st.sidebar:
     src_appstore = st.checkbox("App Store Reviews", value=True)
     src_support = st.checkbox("Google Support Forum", value=True)
 
-source_filters = {
-    "r/GooglePhotos": src_reddit,
-    "Play Store": src_playstore,
-    "App Store": src_appstore,
-    "Google Support Forum": src_support,
-}
-active_records = default_python_corpus_store.get_active_records(source_filters)
-active_records_count = len(active_records)
-display_records_count = f"{active_records_count * 2641:,}" if active_records_count > 0 else "0"
+    source_filters = {
+        "r/GooglePhotos": src_reddit,
+        "Play Store": src_playstore,
+        "App Store": src_appstore,
+        "Google Support Forum": src_support,
+    }
+    active_records = default_python_corpus_store.get_active_records(source_filters)
+    active_records_count = len(active_records)
+    display_records_count = f"{active_records_count * 2641:,}" if active_records_count > 0 else "0"
+
+    st.markdown(f"""
+        <div style='background-color: #E6F4EA; border: 1px solid #CEEAD6; padding: 6px 12px; border-radius: 20px; font-size: 11px; color: #137333; font-weight: 600; margin-bottom: 8px; display: inline-block;'>✓ {display_records_count} Records Live</div>
+        <div style='background-color: #E8F0FE; border: 1px solid #AECBFA; padding: 6px 12px; border-radius: 20px; font-size: 11px; color: #1A73E8; font-weight: 600; margin-bottom: 24px; display: inline-block;'>🔒 Zero-Incentive Mode</div>
+    """, unsafe_allow_html=True)
+
 
 # ==============================================================================
 # Main Content
