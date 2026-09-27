@@ -124,58 +124,75 @@ def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemin
         "generationConfig": GENERATION_CONFIG,
     }
 
-    try:
-        response = requests.post(
-            endpoint,
-            headers={"Content-Type": "application/json"},
-            json=payload,
-            timeout=45,
-        )
+    import time
+    
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(
+                endpoint,
+                headers={"Content-Type": "application/json"},
+                json=payload,
+                timeout=45,
+            )
 
-        if response.status_code != 200:
-            return map_http_error(response.status_code, endpoint)
+            if response.status_code in (429, 500, 503) and attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+                continue
+                
+            if response.status_code != 200:
+                return map_http_error(response.status_code, endpoint)
 
-        data = response.json()
-        candidates = data.get("candidates", [])
-        if not candidates:
+            data = response.json()
+            candidates = data.get("candidates", [])
+            if not candidates:
+                return {
+                    "success": False,
+                    "error": "Empty Model Response: Google Gemini returned no candidates.",
+                    "status": 200,
+                }
+
+            text = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
+            if not text or not text.strip():
+                return {
+                    "success": False,
+                    "error": "Empty Model Response: Model returned an empty text string.",
+                    "status": 200,
+                }
+
             return {
-                "success": False,
-                "error": "Empty Model Response: Google Gemini returned no candidates.",
+                "success": True,
+                "data": text.strip(),
                 "status": 200,
             }
 
-        text = candidates[0].get("content", {}).get("parts", [{}])[0].get("text", "")
-        if not text or not text.strip():
+        except requests.exceptions.Timeout:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+                continue
             return {
                 "success": False,
-                "error": "Empty Model Response: Model returned an empty text string.",
-                "status": 200,
+                "error": "Request Timeout: Google AI Studio took longer than 45 seconds to respond. Please retry.",
+                "status": 408,
             }
-
-        return {
-            "success": True,
-            "data": text.strip(),
-            "status": 200,
-        }
-
-    except requests.exceptions.Timeout:
-        return {
-            "success": False,
-            "error": "Request Timeout: Google AI Studio took longer than 45 seconds to respond. Please retry.",
-            "status": 408,
-        }
-    except requests.exceptions.ConnectionError:
-        return {
-            "success": False,
-            "error": "Network Connection Failed: Unable to reach Google AI Studio. Please verify your internet connection or proxy settings.",
-            "status": 0,
-        }
-    except Exception as e:
-        return {
-            "success": False,
-            "error": f"Unexpected Error: {str(e)}",
-            "status": 500,
-        }
+        except requests.exceptions.ConnectionError:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+                continue
+            return {
+                "success": False,
+                "error": "Network Connection Failed: Unable to reach Google AI Studio. Please verify your internet connection or proxy settings.",
+                "status": 0,
+            }
+        except Exception as e:
+            if attempt < max_retries - 1:
+                time.sleep(2 ** attempt)
+                continue
+            return {
+                "success": False,
+                "error": f"Unexpected Error: {str(e)}",
+                "status": 500,
+            }
 
 
 def map_http_error(status: int, endpoint: str = "") -> Dict[str, Any]:
