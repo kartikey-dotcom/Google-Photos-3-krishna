@@ -110,13 +110,6 @@ def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemin
             "status": 401,
         }
 
-    if not clean_key.startswith("AIza"):
-        return {
-            "success": False,
-            "error": f"Invalid API Key Format: Google AI Studio API keys always begin with 'AIza'. You provided a key starting with '{clean_key[:4]}...'. Please generate a valid key at https://aistudio.google.com/app/apikey and update your Streamlit Secrets.",
-            "status": 401,
-        }
-
     if not prompt or not prompt.strip():
         return {
             "success": False,
