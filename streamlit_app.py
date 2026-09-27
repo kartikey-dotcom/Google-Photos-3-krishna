@@ -70,10 +70,11 @@ html, body, [class*="st-"] {
     font-size: 24px;
     font-weight: 700;
     margin: 0;
+    color: #FFFFFF !important;
 }
 .gp-hero-subtitle {
     font-size: 14px;
-    color: #A0AEC0;
+    color: #E2E8F0 !important;
     margin-top: 4px;
 }
 
