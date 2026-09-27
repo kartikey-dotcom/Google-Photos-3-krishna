@@ -401,46 +401,7 @@ if "report_markdown" not in st.session_state:
 with st.sidebar:
     st.markdown("### Control & Configuration")
 
-    # Card 1: API Key Configuration Panel
-    st.markdown(
-        """
-<div class="sidebar-panel">
-<div class="sidebar-panel-header">
-<span class="sidebar-panel-title">🔑 API Key Configuration</span>
-</div>
-<div class="sidebar-panel-subtitle">Zero-trust runtime memory lifecycle (never persisted to disk)</div>
-</div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-    api_key_input = st.text_input(
-        "Google AI Studio Gemini API Key",
-        value=st.session_state.api_key,
-        type="password",
-        placeholder="Paste AI Studio Key (AIzaSy...)",
-        help="Held strictly in runtime memory. Never saved to local storage, cookies, or external databases.",
-        label_visibility="collapsed",
-    )
-
-    clean_key = api_key_input.strip().strip("'\"")
-    st.session_state.api_key = clean_key
-
-    # Status indicator
-    if clean_key:
-        st.markdown(
-            '<div style="font-size: 11.5px; color: #137333; display: flex; align-items: center; gap: 6px; margin-bottom: 14px;">'
-            '<span class="status-dot dot-green"></span> Key Configured (In-Memory Only) • 🔒 Secure'
-            '</div>',
-            unsafe_allow_html=True,
-        )
-    else:
-        st.markdown(
-            '<div style="font-size: 11.5px; color: #80868b; display: flex; align-items: center; gap: 6px; margin-bottom: 14px;">'
-            '<span class="status-dot dot-gray"></span> No Key Entered (Memory Only)'
-            '</div>',
-            unsafe_allow_html=True,
-        )
+    clean_key = st.session_state.api_key
 
     # Card 2: Corpus Source Filter Panel
     st.markdown(
@@ -656,7 +617,7 @@ else:
     if active_records_count == 0:
         st.error("⚠️ **No Active Data Sources**: Please check at least one feedback source in the sidebar to feed data to the engine.")
     elif not clean_key:
-        st.warning("⚠️ **Gemini API Key Required**: Enter your Google AI Studio API key in the left sidebar to execute this analytical workflow.")
+        st.warning("⚠️ **Gemini API Key Required**: Please add `GEMINI_API_KEY` to your Streamlit Cloud secrets to execute this analytical workflow.")
     else:
         col_exec1, col_exec2 = st.columns([3, 1])
         with col_exec1:
