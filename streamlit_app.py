@@ -484,22 +484,24 @@ with tab5:
     if btn3.button("⚙️ Suggest Algorithmic Fixes", use_container_width=True):
         st.session_state.custom_query = "Suggest 3 algorithmic improvements for Google Photos."
         
-    query = st.text_area("Enter your growth / product query:", 
-                         value=st.session_state.get("custom_query", ""),
-                         placeholder="Ask anything about customer friction, search failures, UI interventions...",
-                         height=100)
-                         
-    if st.button("🚀 Analyze & Generate Response", type="primary", use_container_width=True):
-        if not st.session_state.api_key:
-            st.error("⚠️ Please configure GEMINI_API_KEY in Streamlit Secrets.")
-        elif not query:
-            st.warning("⚠️ Please enter a query.")
-        else:
-            with st.spinner("Generating Insights via Gemini 3.8 Flash..."):
-                prompt = f"SYSTEM: You are a PM for Google Photos. Answer the following based on VoC data: {query}\nDATA: {json.dumps(active_records)}"
-                st.success("Analysis Complete!")
-                st.markdown("---")
-                
-                # Stream the response directly to the UI to eliminate buffering
-                stream = execute_gemini_inference_stream(prompt, st.session_state.api_key)
-                st.write_stream(stream)
+    with st.form("query_form"):
+        query = st.text_input("Enter your growth / product query:", 
+                             value=st.session_state.get("custom_query", ""),
+                             placeholder="Ask anything about customer friction, search failures, UI interventions...")
+                             
+        submitted = st.form_submit_button("🚀 Analyze & Generate Response", type="primary", use_container_width=True)
+        
+        if submitted:
+            if not st.session_state.api_key:
+                st.error("⚠️ Please configure GEMINI_API_KEY in Streamlit Secrets.")
+            elif not query:
+                st.warning("⚠️ Please enter a query.")
+            else:
+                with st.spinner("Generating Insights via Gemini 3.8 Flash..."):
+                    prompt = f"SYSTEM: You are a PM for Google Photos. Answer the following based on VoC data: {query}\nDATA: {json.dumps(active_records)}"
+                    st.success("Analysis Complete!")
+                    st.markdown("---")
+                    
+                    # Stream the response directly to the UI to eliminate buffering
+                    stream = execute_gemini_inference_stream(prompt, st.session_state.api_key)
+                    st.write_stream(stream)
