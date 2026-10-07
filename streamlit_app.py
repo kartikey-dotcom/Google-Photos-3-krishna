@@ -503,5 +503,5 @@ with tab5:
                     st.markdown("---")
                     
                     # Stream the response directly to the UI to eliminate buffering
-                    stream = execute_gemini_inference_stream(prompt, st.session_state.api_key)
+                    stream = execute_gemini_inference_stream(prompt, st.session_state.api_key, model_name="gemini-flash-latest")
                     st.write_stream(stream)
