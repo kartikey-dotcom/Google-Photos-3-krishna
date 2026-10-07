@@ -97,7 +97,7 @@ INPUT VOICE-OF-CUSTOMER (VoC) FEEDBACK DATASET:
 Strictly adhere to the output contract and ground all findings in the provided dataset. Begin your analysis now:"""
 
 
-def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemini-flash-latest") -> Dict[str, Any]:
+def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemini-flash-lite-latest") -> Dict[str, Any]:
     """
     Direct HTTPS REST client for Google AI Studio Generative Language API
     bound strictly to Temperature 0.2 and Top_P 0.8.
@@ -279,7 +279,7 @@ def optimize_for_slides(markdown: str) -> str:
 
     return "\n".join(output).strip()
 
-def execute_gemini_inference_stream(prompt: str, api_key: str, model_name: str = "gemini-flash-latest"):
+def execute_gemini_inference_stream(prompt: str, api_key: str, model_name: str = "gemini-flash-lite-latest"):
     import time, json, requests
     clean_key = (api_key or "").strip().strip("'\"")
     if not clean_key:

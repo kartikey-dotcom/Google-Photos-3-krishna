@@ -501,7 +501,7 @@ with tab5:
                     prompt = f"SYSTEM: You are a PM for Google Photos. Answer the following based on VoC data: {query}\nDATA: {json.dumps(active_records)}"
                     
                     # Stream the response directly to the UI
-                    stream = execute_gemini_inference_stream(prompt, st.session_state.api_key, model_name="gemini-flash-latest")
+                    stream = execute_gemini_inference_stream(prompt, st.session_state.api_key, model_name="gemini-flash-lite-latest")
                     st.write_stream(stream)
                     
                 st.markdown("---")
