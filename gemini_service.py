@@ -133,7 +133,7 @@ def execute_gemini_inference(prompt: str, api_key: str, model_name: str = "gemin
                 endpoint,
                 headers={"Content-Type": "application/json"},
                 json=payload,
-                timeout=45,
+                timeout=120,
             )
 
             if response.status_code in (429, 500, 503) and attempt < max_retries - 1:
@@ -302,7 +302,7 @@ def execute_gemini_inference_stream(prompt: str, api_key: str, model_name: str =
                 endpoint,
                 headers={"Content-Type": "application/json"},
                 json=payload,
-                timeout=45,
+                timeout=120,
                 stream=True
             ) as response:
                 if response.status_code in (429, 500, 503) and attempt < max_retries - 1:
