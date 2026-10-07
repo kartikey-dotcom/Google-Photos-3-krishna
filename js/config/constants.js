@@ -5,7 +5,7 @@
 
 export const APP_CONFIG = {
   VERSION: '1.0.0',
-  MODEL_NAME: 'gemini-1.5-flash',
+  MODEL_NAME: 'gemini-flash-latest',
   GENERATION_CONFIG: {
     temperature: 0.2, // Locked for deterministic, reproducible synthesis
     topP: 0.8,

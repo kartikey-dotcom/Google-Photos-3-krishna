@@ -14,7 +14,7 @@ export class GeminiClient {
    */
   constructor(options = {}) {
     this.baseUrl = options.baseUrl || 'https://generativelanguage.googleapis.com/v1beta/models';
-    this.modelName = options.modelName || APP_CONFIG.MODEL_NAME || 'gemini-1.5-flash';
+    this.modelName = options.modelName || APP_CONFIG.MODEL_NAME || 'gemini-flash-latest';
   }
 
   /**
