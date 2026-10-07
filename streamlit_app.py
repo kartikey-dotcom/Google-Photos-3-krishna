@@ -497,7 +497,7 @@ with tab5:
             elif not query:
                 st.warning("⚠️ Please enter a query.")
             else:
-                with st.spinner("Generating Insights via Gemini 3.8 Flash..."):
+                with st.spinner("Generating Insights via Gemini 1.5 Flash..."):
                     prompt = f"SYSTEM: You are a PM for Google Photos. Answer the following based on VoC data: {query}\nDATA: {json.dumps(active_records)}"
                     st.success("Analysis Complete!")
                     st.markdown("---")
