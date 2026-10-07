@@ -251,7 +251,7 @@ with st.sidebar:
 # Hero Banner
 st.markdown("""
 <div class="gp-hero-banner">
-    <div class="gp-hero-chip">GOOGLE</div>
+    <div class="gp-hero-chip">Google Photos</div>
     <div>
         <div class="gp-hero-title">Memory Retrieval Intelligence Engine</div>
         <div class="gp-hero-subtitle">Diagnosing & Solving Photo Retrieval Stagnation via Semantic & Temporal Nudges</div>
