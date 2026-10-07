@@ -499,9 +499,10 @@ with tab5:
             else:
                 with st.spinner("Generating Insights via Gemini Flash Latest..."):
                     prompt = f"SYSTEM: You are a PM for Google Photos. Answer the following based on VoC data: {query}\nDATA: {json.dumps(active_records)}"
-                    st.success("Analysis Complete!")
-                    st.markdown("---")
                     
-                    # Stream the response directly to the UI to eliminate buffering
+                    # Stream the response directly to the UI
                     stream = execute_gemini_inference_stream(prompt, st.session_state.api_key, model_name="gemini-flash-latest")
                     st.write_stream(stream)
+                    
+                st.markdown("---")
+                st.success("Analysis Complete!")
